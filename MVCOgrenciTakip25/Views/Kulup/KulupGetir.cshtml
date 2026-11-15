@@ -1,0 +1,24 @@
+﻿@model MVCOgrenciTakip25.Models.TBLKULUP
+@{
+    ViewBag.Title = "KulupGetir";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>Kulup Gümcelle</h2>
+
+@using (Html.BeginForm("Güncelle", "Kulup", FormMethod.Post))
+{
+    <div class="form-group">
+        @*<label>Kulup Id</label> HiddenFor Id Görünmez Yapar*@
+        @Html.HiddenFor(x => x.KULUPID, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <br />
+
+    <div class=" form-group" )>
+         <label>Kulup Adı</label>
+        @Html.TextBoxFor(x => x.KULUPADI, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Kaydet</button>
+
+}
+

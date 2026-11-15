@@ -1,0 +1,85 @@
+﻿@using MVCOgrenciTakip25.Models
+@model List<TBLNOTLAR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>N O T L A R</h2>
+<a href="/Notlar/YeniNot" class="btn btn-success">Yeni Not Ekle</a>
+<table class="table table-hover">
+    <tr>
+        <td>ID</td>
+        <td>ÖĞRENCİ</td>
+        <td>DERS</td>
+        <td>VİZE</td>
+        <td>FİNAL</td>
+        <td>BÜTÜNLEME</td>
+        <td>ORTALAMA</td>
+        <td>DURUM</td>
+        <td>GÜNCELLE</td>
+        <td>SİL</td>
+
+
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        string renk;
+        if (x.DURUM == false)
+        {
+            renk = "red";
+        }
+        else
+        {
+            renk = "limegreen";
+        }
+
+        <tr style="background-color:@renk;">
+            <td>@x.NOTEID</td>
+            <td>@x.TBLOGRENCİ.OGRADI  @x.TBLOGRENCİ.OGRSOYAD</td>
+            <td>@x.TBLDERS.DERSAD</td>
+            <td>@x.VIZE</td>
+            <td>@x.FINAL</td>
+            <td>@x.BUTUNLEME</td>
+            <td>@x.ORTALAMA</td>
+            <td>Onaylı Sil</td>
+            @if (x.DURUM == false)
+            {
+                <td>Kaldı</td>
+
+            }
+            else
+            {
+                <td>Geçti</td>
+
+            }
+            <td>
+              <img src="~/Controllers/Resimler/icons8-update (1).gif" width="50" />
+            </td>
+            <td>
+                <a href="/Notlar/NotSil/@x.NOTEID"><img src="~/Controllers/Resimler/icons8-remove.gif" /></a>
+            </td>
+            <td>
+                @Html.ActionLink("Onaylı Sil", "NotSil", new { id = x.NOTEID }, new { @class = "btn btn-danger" })
+            </td>
+
+
+
+
+        </tr>
+    }
+</table>
+
+@*@if (x.DURUM == false)
+    {
+        <td style="color:red; ">Kaldı</td>
+
+    }
+    else
+    {
+        <td style="color:greenyellow; ">Geçti</td>
+
+    }
+*@

@@ -1,0 +1,33 @@
+﻿@model MVCOgrenciTakip25.Models.TBLNOTLAR
+
+@{
+    ViewBag.Title = "YeniNot";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>YeniNot</h2>
+<hr />
+@using (Html.BeginForm("YeniNot", "Notlar", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.TextBoxFor(x => x.OGRENCI, new { @class = "form-control", @placeholder = "Öğrenci ID Giriniz" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.TextBoxFor(x => x.DERSID, new { @class = "form-control", @placeholder = "Ders ID Giriniz" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.TextBoxFor(x => x.VIZE, new { @class = "form-control", @placeholder = "Vize Notunu Giriniz" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.TextBoxFor(x => x.FINAL, new { @class = "form-control", @placeholder = "Final Notunu Giriniz" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.TextBoxFor(x => x.BUTUNLEME, new { @class = "form-control", @placeholder = "Bütünleme ID Giriniz" })
+    </div>
+    <br />
+    <button class="btn-outline-secondary">Kaydet</button>
+}   

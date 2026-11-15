@@ -1,0 +1,35 @@
+﻿@using MVCOgrenciTakip25.Models
+@model List<TBLKULUP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>K U L U P</h2>
+<hr />
+<a href="/Kulup/YeniKulup" class="btn btn-success">Yeni Kulup Ekle</a>
+<hr />
+<table class="table table-hover">
+    <tr>
+        <td>ID</td>
+        <td>ADI</td>
+        <td>GÜNCELLE</td>
+        <td>SİL</td>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.KULUPID</td>
+            <td>@x.KULUPADI</td>
+            <td>
+                <a href="/Kulupler/KulupSil/@x.KULUPID"> <img src="~/Controllers/Resimler/icons8-update (1).gif" width="50" /></a>
+            </td>
+            <td>
+                <img src="~/Controllers/Resimler/icons8-remove.gif" />
+            </td>
+
+        </tr>
+    }
+</table>
+

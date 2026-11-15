@@ -1,0 +1,53 @@
+﻿@using MVCOgrenciTakip25.Models
+@model List<TBLOGRENCİ>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>Ö G R E N C İ L E R</h2>
+<hr />
+<a href="/Ogrenci/YeniOgrenci" class="btn btn-success">Yeni Öğrenci Ekle</a>
+<hr />
+
+<table class="table table-hover">
+    <tr>
+        <td>ID</td>
+        <td>ADI</td>
+        <td>SOYADI</td>
+        <td>KULUP</td>
+        <td>YAŞ</td>
+        <td>SINIF</td>
+        <td>ŞEHİR</td>
+        <td>GÜNCELLE</td>
+        <td>SİL</td>
+        <td>Onaylı Sil</td>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.OGRID</td>
+            <td>@x.OGRADI</td>
+            <td>@x.OGRSOYAD</td>
+            <td>@x.TBLKULUP.KULUPADI</td>
+            <td>@x.OGRYAS</td>
+            <td>@x.OGRSINIF</td>
+            <td>@x.OGRSEHIR</td>
+            <td>
+                <a href="/Ogrenci/OgrenciGetir/@x.OGRID"><img src="~/Controllers/Resimler/icons8-update (1).gif" width="50" /></a>
+            </td>
+            <td>
+                <a href="@Url.Action("OgrenciSil", new { id = x.OGRID })"
+                   onclick="return confirm('Bu Kaydı Silmek İstediğinizden Emin Misiniz?');">
+                    <img src="~/Controllers/Resimler/icons8-remove.gif" />
+                </a>
+            </td>
+            <td>
+                @Html.ActionLink("Onaylı Sil", "OgrenciSil",
+       new { id = x.OGRID },
+       new { @class = "btn btn-danger", onclick = "return confirm" + "('Bu Kaydı Silmek İstediğinizden Emin Misiniz?');" })
+            </td>
+        </tr>
+    }
+</table>

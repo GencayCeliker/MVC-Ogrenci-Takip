@@ -1,0 +1,20 @@
+﻿@model MVCOgrenciTakip25.Models.TBLDERS
+@{
+    ViewBag.Title = "DersGetir";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>Ders Güncelle</h2>
+@using (Html.BeginForm("Güncelle", "Dersler", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>DersId</label>
+        @Html.TextBoxFor(x => x.DERSID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Ders Adı</label>
+        @Html.TextBoxFor(x => x.DERSAD, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">Kaydet</button>
+}
+

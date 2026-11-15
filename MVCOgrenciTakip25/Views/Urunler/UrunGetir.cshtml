@@ -1,0 +1,36 @@
+﻿@model MVCOgrenciTakip25.Models.TBLURUN
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>Urun Güncelle</h2>
+
+@using (Html.BeginForm("UrunGuncelle", "Urunler", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Ürün Id</label>
+        @Html.TextBoxFor(model => model.ID, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <br />
+
+    <div>
+        <label>Ürün Adı</label>
+        @Html.TextBoxFor(model => model.URUNADI, new { @class = "form-control" })
+    </div>
+    <br />
+
+    <div>
+        <label>Marka</label>
+        @Html.TextBoxFor(model => model.MARKA, new { @class = "form-control" })
+    </div>
+    <br />
+
+    <div>
+        <label>Stok Adeti</label>
+        @Html.TextBoxFor(model => model.STOKADET, new { @class = "form-control" })
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+}

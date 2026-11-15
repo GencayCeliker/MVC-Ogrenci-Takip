@@ -1,0 +1,39 @@
+﻿@using MVCOgrenciTakip25.Models
+@model List<TBLURUN>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>Ü R Ü N L E R </h2>
+<a href="/URUNLER/YeniUrun" class="btn btn-success">Yeni Urun Ekle</a>
+<table class="table table-hover">
+    <tr>
+        <td>ID</td>
+        <td>ADI</td>
+        <td>MARKA</td>
+        <td>STOK ADETİ</td>
+        <td>GÜNCELLE</td>
+        <td>SİL</td>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.URUNADI</td>
+            <td>@x.MARKA</td>
+            <td>@x.STOKADET</td>
+            <td>
+                <a href="/Urunler/UrunGetir/@x.ID"> <img src="~/Controllers/Resimler/icons8-update (1).gif" width="50" /></a>
+            </td>
+            <td>
+                <a href="@Url.Action("UrunSil", new { id = x.ID })"
+                   onclick="return confirm('Bu Kaydı Silmek İstediğinizden Emin Misiniz?');">
+                    <img src="~/Controllers/Resimler/icons8-remove.gif" />
+                </a>
+            </td>
+
+        </tr>
+    }
+</table>

@@ -1,0 +1,56 @@
+﻿@model MVCOgrenciTakip25.Models.TBLOGRENCİ
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>Yeni Ögrenci</h2>
+
+
+    @using (Html.BeginForm("YeniOgrenci", "Ogrenci", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label>Öğrenci Adı: </label>
+            @Html.TextBoxFor(x => x.OGRADI, new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label>Öğrenci Soyadı: </label>
+            @Html.TextBoxFor(x => x.OGRSOYAD, new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label>Öğrenci Yaş: </label>
+            @Html.TextBoxFor(x => x.OGRYAS, new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label>Şehir: </label>
+            @Html.TextBoxFor(x => x.OGRSEHIR, new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label>Sınıf: </label>
+            @Html.TextBoxFor(x => x.OGRSINIF, new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label>Kulüp: </label>
+            @Html.TextBoxFor(x => x.OGRKULUP, new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <button class="btn btn-outline-success"> Kaydet </button>
+    
+}   

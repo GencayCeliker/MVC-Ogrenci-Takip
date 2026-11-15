@@ -1,0 +1,19 @@
+﻿@model MVCOgrenciTakip25.Models.TBLKULUP
+
+@{
+    ViewBag.Title = "YeniKulup";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>Yeni Kulup</h2>
+
+<div class="col-md-6">
+    <form action="/Kulup/YeniKulup" method="post">
+
+        <input type="text" class="form-control" name="KULUPADI" placeholder="Kulüp Adı Giriniz" />
+        <br />
+       
+        <button class="btn btn-info"> Kaydet </button>
+
+    </form>
+</div>

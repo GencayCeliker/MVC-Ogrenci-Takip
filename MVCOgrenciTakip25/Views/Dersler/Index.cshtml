@@ -1,0 +1,40 @@
+﻿@using MVCOgrenciTakip25.Models
+@model List<TBLDERS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>D E R S L E R</h2>
+<hr />
+
+<a href="/Dersler/DersEkle" class="btn btn-success">Yeni Ders Ekle</a>
+<hr />
+
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>DERS</td>
+        <td>GÜNCELLE</td>
+        <td>SİL</td>
+        <td>ONAYLI SİL</td>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.DERSID</td>
+            <td>@x.DERSAD</td>
+            <td><a href="/Dersler/DersGetir/@x.DERSID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Ders/DersSil/@x.DERSID" class="btn btn-danger">Sil</a></td>
+            <td>
+                <div class="form-group">
+                    @Html.ActionLink("Onaylı Sil", "DersSil",
+                   new { id = x.DERSID },
+                   new { @class = "btn btn-danger", onclick = "return confirm" + "('Bu Kaydı Silmek İstediğinizden Emin Misiniz?');" })
+                </div>
+               
+                    </td>
+        </tr>
+    }
+</table>
+

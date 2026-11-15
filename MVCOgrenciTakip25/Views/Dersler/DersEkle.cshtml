@@ -1,0 +1,14 @@
+﻿@model MVCOgrenciTakip25.Models.TBLDERS
+@{
+    ViewBag.Title = "DersEkle";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>DersEkle</h2>
+<div class="col-md-6">
+    <form action="/Dersler/DersEkle" method="post">
+        <input type="text" class="form-control" name="DERSAD" value="" />
+        <br />
+        <button class="btn btn-info"> Ders Kaydet   </button>
+    </form>
+</div>

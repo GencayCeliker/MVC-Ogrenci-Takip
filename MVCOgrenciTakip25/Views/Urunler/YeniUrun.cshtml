@@ -1,0 +1,21 @@
+﻿@model MVCOgrenciTakip25.Models.TBLURUN
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/LayoutOgrenci.cshtml";
+}
+
+<h2>Yeni Urun</h2>
+<div class="col-md-6">
+    <form action="/URUNLER/YeniUrun" method="post">
+
+        <input type="text" class="form-control" name="URUNADI" placeholder="Ürün Adı Giriniz" />
+        <br />
+        <input type="text" class="form-control" name="MARKA" placeholder="Marka Giriniz" />
+        <br />
+        <input type="text" class="form-control" name="STOKADET" placeholder="Stok Adeti Giriniz" />
+        <br />
+        <button class="btn btn-info"> Kaydet </button>
+
+    </form>
+</div>
+
