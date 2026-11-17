@@ -42,3 +42,7 @@
 2. **Veritabanını kurun (SSMS 22):** `Veri Tabanı/DBLINQSORGULAR25B.sql` dosyasını açıp **Execute (F5)**'e basın.
 3. **Bağlantıyı kontrol edin:** `MVCOgrenciTakip25/Web.config` içinde `data source=.\SQLEXPRESS` kullanılır.
 4. **Çalıştırın:** `MVCOgrenciTakip25.sln` dosyasını açın; NuGet paketleri otomatik yüklenir; **F5** ile IIS Express'te başlatın.
+
+## 📄 Lisans
+
+Bu proje [MIT](LICENSE) lisansı altında sunulmuştur.
