@@ -44,7 +44,7 @@ namespace MVCOgrenciTakip25.Controllers
         }
         public ActionResult Guncelle(TBLDERS drs)
         {
-            var guncders = db.TBLDERS.Find(drs);
+            var guncders = db.TBLDERS.Find(drs.DERSID);
             guncders.DERSAD = drs.DERSAD;
             db.SaveChanges();
             return RedirectToAction("Index");
