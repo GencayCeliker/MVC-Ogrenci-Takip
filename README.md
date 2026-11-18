@@ -12,6 +12,19 @@
 
 ---
 
+## 🎬 Demo
+
+![demo](docs/demo.gif)
+
+Öğrenci listesi, **Yeni Öğrenci Ekle** formu ile kayıt, notlar (geçti/kaldı), dersler ve kulüpler.
+
+| Öğrenciler | Notlar ve ortalamalar |
+| --- | --- |
+| ![Öğrenciler](docs/ogrenciler.png) | ![Notlar ve ortalamalar](docs/notlar.png) |
+
+> Görüntüler, depodaki kurulum script'iyle kurulan örnek veritabanı üzerinde uygulama çalıştırılarak alınmıştır.
+
+
 ## 🚀 Özellikler
 
 | Modül | İşlemler |
