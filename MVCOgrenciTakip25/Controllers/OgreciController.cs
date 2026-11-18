@@ -17,11 +17,12 @@ namespace MVCOgrenciTakip25.Controllers
             var ogrenciler=db.TBLOGRENCİ.Where(x=>x.OGRDURUM==true).ToList();
             return View(ogrenciler);
         }
-        [HttpPost]
+        [HttpGet]
         public ActionResult YeniOgrenci()
         {
             return View();
         }
+        [HttpPost]
         public ActionResult YeniOgrenci(TBLOGRENCİ ogr)
         {
             TBLOGRENCİ yeni = new TBLOGRENCİ();
