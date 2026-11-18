@@ -52,13 +52,14 @@ namespace MVCOgrenciTakip25.Controllers
         }
         public ActionResult Guncelle(TBLOGRENCİ ogr)
         {
-            var bul = db.TBLOGRENCİ.Find(ogr);
+            var bul = db.TBLOGRENCİ.Find(ogr.OGRID);
             bul.OGRADI = ogr.OGRADI;
             bul.OGRSOYAD = ogr.OGRSOYAD;
-            bul.OGRSINIF = ogr.OGRSINIF;
-            bul.OGRKULUP = ogr.OGRKULUP; 
-            bul.OGRYAS = ogr.OGRYAS;
             bul.OGRSEHIR = ogr.OGRSEHIR;
+            // Güncelleme formunda olmayan alanlar boş gelir; mevcut değer korunur
+            if (ogr.OGRSINIF.HasValue) bul.OGRSINIF = ogr.OGRSINIF;
+            if (ogr.OGRKULUP.HasValue) bul.OGRKULUP = ogr.OGRKULUP;
+            if (ogr.OGRYAS.HasValue) bul.OGRYAS = ogr.OGRYAS;
             db.SaveChanges();
 
             return RedirectToAction("Index");
